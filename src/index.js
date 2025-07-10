@@ -5,19 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { BrowserRouter } from 'react-router-dom'; // Tambahkan ini
+import { BrowserRouter } from 'react-router-dom';
 
+// GUNAKAN basename SESUAI NAMA REPO!
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/surveilans-bkk-pangkalpinang">
       <App />
     </BrowserRouter>
   // </React.StrictMode>
 );
 
-// Aktifkan PWA dengan register service worker
-serviceWorkerRegistration.register();
+// Nonaktifkan service worker agar tidak error di GitHub Pages
+serviceWorkerRegistration.unregister();
 
 // Jika ingin mengukur performa aplikasi, gunakan reportWebVitals
 // Contoh: reportWebVitals(console.log)
