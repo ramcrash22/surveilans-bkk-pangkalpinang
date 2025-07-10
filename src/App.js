@@ -9,8 +9,7 @@ import MainLayout from "./components/MainLayout";
 import FormulirAlatAngkut from "./components/FormulirAlatAngkut/FormulirAlatAngkut";
 import ModalConfirm from "./components/Modal/ModalConfirm";
 import FormulirBarang from "./components/FormulirBarang/FormulirBarang";
-// <--- Import baru untuk FormulirOrang
-import FormulirOrang from "./components/FormulirOrang/FormulirOrang"; // Pastikan path ini benar
+import FormulirOrang from "./components/FormulirOrang/FormulirOrang";
 
 function HomeContent({ pesanDariApi, loading, error }) {
   return (
@@ -65,7 +64,11 @@ function App() {
 
   // FETCH DATA API
   useEffect(() => {
-    const apiUrl = "http://localhost:8000/api/halo";
+    // Ganti ke endpoint API online (jika belum punya, biarkan kosong agar tidak error)
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://your-api-online.com/api/halo" // Ganti dengan URL API online kamu
+        : "http://localhost:8000/api/halo";
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -117,12 +120,11 @@ function App() {
             </MainLayout>
           }
         />
-        {/* <--- Tambah route baru di sini */}
         <Route
-          path="/Formulir-Orang" // Path untuk Formulir Orang
+          path="/Formulir-Orang"
           element={
             <MainLayout sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
-              <FormulirOrang openModal={openModal} /> {/* Render FormulirOrang dan teruskan openModal */}
+              <FormulirOrang openModal={openModal} />
             </MainLayout>
           }
         />
