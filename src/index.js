@@ -5,15 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom'; // Ganti BrowserRouter ke HashRouter
 
-// GUNAKAN basename SESUAI NAMA REPO!
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <BrowserRouter basename="/surveilans-bkk-pangkalpinang">
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   // </React.StrictMode>
 );
 
