@@ -2,7 +2,7 @@
   "name": "surveilans-bkk-pangkalpinang",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ramcrash22/surveilans-bkk-pangkalpinang.git",
+  "homepage": "https://ramcrash22.github.io/surveilans-bkk-pangkalpinang",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
