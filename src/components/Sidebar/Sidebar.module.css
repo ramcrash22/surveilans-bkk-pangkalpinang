@@ -1,0 +1,116 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(150deg, #0d6efd 60%, #0bc6e3 100%);
+  box-shadow: 4px 0 24px 0 rgba(0,0,0,0.18), 1px 0 8px 0 rgba(0,0,0,0.07);
+  transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  justify-content: space-between;
+}
+
+.sidebarOpen {
+  left: 0;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.dashedDivider {
+  width: 75%;
+  margin: 0 auto 12px auto;
+  border: none;
+  border-top: 2.5px dashed #fff;
+  border-radius: 5px;
+  opacity: 0.5;
+  height: 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding-left: 30px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+  padding: 8px 0 7px 0;
+  display: block;
+  border-radius: 6px;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+  color: #ffe066;
+}
+
+.menu li a.active {
+  color: #ffe066;
+}
+
+
+.footer {
+  margin-top: auto;
+  margin-bottom: 65px;
+  background: rgba(0,0,0,0.03);
+  padding: 18px 14px 22px 14px;
+  color: #fff;
+  font-size: 0.97rem;
+  text-align: center;
+}
+
+.hotline a {
+  color: #ffe066;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hotline a:hover {
+  text-decoration: underline;
+}
+
+.developed {
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: #e0e0e0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 150;
+  transition: opacity 0.3s;
+}
+
+.overlayShow {
+  opacity: 1;
+  pointer-events: auto;
+}

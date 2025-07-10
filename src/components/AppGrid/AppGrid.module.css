@@ -1,0 +1,104 @@
+.cardContainer {
+  background: rgba(255, 255, 255, 0.22);      /* Transparan */
+  border-radius: 10px;
+  box-shadow: 0 4px 24px 0 rgba(13,110,253,0.12);
+  max-width: 800px;
+  margin: 32px auto 0 auto;
+  padding: 32px 24px;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* Efek kilau (shine) di pojok kiri atas */
+.cardContainer::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.05) 80%);
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Efek kilau diagonal tipis */
+.cardContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 180px;
+  height: 100%;
+  background: linear-gradient(100deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%);
+  transform: rotate(-18deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 28px 18px;
+}
+
+.appItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+  background: transparent;
+  border-radius: 12px;
+  padding: 0;
+  transition: none;
+}
+
+.icon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  word-break: break-word;
+  transition: color 0.2s;
+}
+
+/* Hover effect: hanya icon dan text */
+.appItem:hover .icon,
+.appItem:focus .icon {
+  filter: brightness(1.2) drop-shadow(0 2px 8px rgba(13,110,253,0.18));
+  transform: scale(1.08);
+}
+
+.appItem:hover .text,
+.appItem:focus .text {
+  color: #0d6efd;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 600px) {
+  .cardContainer {
+    padding: 20px 8px;
+    margin: 20px 15px 0 15px; /* margin kiri-kanan di mobile */
+    max-width: 100%;
+  }
+  .grid {
+    grid-gap: 18px 6px;
+  }
+  .icon {
+    width: 38px;
+    height: 38px;
+  }
+}

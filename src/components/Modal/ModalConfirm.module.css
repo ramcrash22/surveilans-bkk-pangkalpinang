@@ -1,0 +1,104 @@
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(31, 41, 55, 0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overscroll-behavior: contain;
+}
+
+.modalBox {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px 0 rgba(13,110,253,0.14), 0 2px 8px 0 #b7bfd8 inset;
+  padding: 36px 32px 28px 32px;
+  max-width: 95vw;
+  width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  border: 1.5px solid #b7bfd8;
+  animation: modalPop 0.18s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modalIconWarning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 14px;
+  animation: warningPop 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes warningPop {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modalTitle {
+  font-size: 1.18rem;
+  font-weight: bold;
+  color: #0d2a4a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modalText {
+  color: #173c60;
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.modalActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.modalBtn {
+  padding: 10px 24px;
+  border-radius: 7px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.17s, color 0.17s, box-shadow 0.17s;
+  outline: none;
+  min-width: 90px;
+  box-shadow: 0 1px 4px 0 #e7f1ff;
+}
+
+.modalBtnPrimary {
+  background: linear-gradient(90deg, #0d6efd 0%, #5fa8f5 100%);
+  color: #fff;
+}
+.modalBtnPrimary:hover {
+  background: #084298;
+  color: #fff;
+}
+
+.modalBtnSecondary {
+  background: #f2f4f8;
+  color: #0d6efd;
+  border: 1.2px solid #cddafd;
+}
+.modalBtnSecondary:hover {
+  background: #eaf1fd;
+  color: #084298;
+}
+
+@media (max-width: 600px) {
+  .modalBox {
+    padding: 24px 10px 18px 10px;
+    width: 98vw;
+  }
+}

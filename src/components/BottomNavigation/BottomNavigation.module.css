@@ -1,0 +1,87 @@
+.bottomNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 68px;
+  background: linear-gradient(90deg, #0d6efd 60%, #0bc6e3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  box-shadow: 0 -3px 16px 0 rgba(13,110,253,0.09);
+  width: 100vw;
+  border-radius: 0;
+}
+
+.placeholder {
+  flex: 1;
+}
+
+/* FAB (Floating Action Button) */
+.fab {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20%);
+  background: linear-gradient(145deg, #ffffff 60%, #e6eafc 100%);
+  border-radius: 50%;
+  border: 3px solid #fcfcfc;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  /* Efek 3D: shadow berlapis */
+  box-shadow:
+    0 4px 18px 0 rgba(13,110,253,0.18),   /* shadow utama */
+    0 1.5px 0 #f5faff inset,              /* highlight atas dalam */
+    0 -4px 16px -8px #b6c7e9 inset;       /* shadow bawah dalam */
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+/* Efek hover/active: tombol terasa ditekan */
+.fab:active {
+  box-shadow:
+    0 1.5px 8px 0 rgba(13,110,253,0.12),
+    0 1.5px 0 #f5faff inset,
+    0 -4px 16px -8px #b6c7e9 inset;
+  transform: translateX(-50%) translateY(-18%) scale(0.97);
+}
+
+.icon {
+  display: block;
+}
+
+.labelWrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.label {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-top: 28px;
+  display: block;
+}
+
+/* Hilangkan max-width dan border-radius di desktop */
+@media (min-width: 600px) {
+  .bottomNav {
+    max-width: none;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+  }
+}

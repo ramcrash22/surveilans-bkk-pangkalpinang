@@ -1,0 +1,15 @@
+/* src/components/Card/Card.module.css */
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  margin: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
