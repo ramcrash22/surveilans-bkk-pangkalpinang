@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Tambahkan ini!
 import styles from './AppGrid.module.css';
 
 import app1 from '../../assets/Img/icon-app/app1.png';
@@ -10,7 +11,7 @@ import app6 from '../../assets/Img/icon-app/app6.png';
 
 const apps = [
   { name: 'Formulir Alat Angkut', icon: app1, link: '/Formulir-Alat-Angkut' },
-  { name: 'Formulir Barang', icon: app2, link: '/Formulir-Barang' }, // Perubahan di sini
+  { name: 'Formulir Barang', icon: app2, link: '/Formulir-Barang' },
   { name: 'Formulir Orang', icon: app3, link: '/Formulir-Orang' },
   { name: 'App Four', icon: app4, link: '/app4' },
   { name: 'App Five', icon: app5, link: '/app5' },
@@ -22,10 +23,10 @@ export default function AppGrid() {
     <div className={styles.cardContainer}>
       <div className={styles.grid}>
         {apps.map((app) => (
-          <a href={app.link} className={styles.appItem} key={app.name}>
+          <Link to={app.link} className={styles.appItem} key={app.name}>
             <img src={app.icon} alt={app.name} className={styles.icon} />
             <span className={styles.text}>{app.name}</span>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
